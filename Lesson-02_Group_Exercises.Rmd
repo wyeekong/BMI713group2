@@ -1,0 +1,101 @@
+---
+title: "BMI 713 Lesson 2: Control Flow, Functions, and Git (Group Exercises)"
+author: "Aparna Nathan"
+output:
+  html_document: 
+    toc: true
+    toc_depth: 3
+    toc_float: true
+  html_notebook: default
+  pdf_document: default
+  
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, cache = T)
+```
+
+## Find your group
+
+The groups (4-5 people) are posted on pieces of paper around the room. Sit near the paper with your name on it to find your group.
+
+## Making the repo from GitHub Classroom
+
+  1. Choose one person in your group to create the GitHub team for this assigment. That person should go to this [link](https://classroom.github.com/a/ZREQL4T7), create a new team, and accept the assignment. This will create a team repo for this assignment.
+  1. Now, everyone else from the group should go to the [link](https://classroom.github.com/a/ZREQL4T7), accept the assignment, and join the team that the first person created. Make sure you join the correct team to get access to the repo!
+  1. Clone the repository for your group to your local computer. On GitHub Desktop, you should see your repo listed under "bmi-713-2023" on your homepage window. Or, you can use "File > Clone Repository..." and copy the URL for your repo. Use either the _GitHub.com_ tab or the _URL_ tab.
+
+# Group Work
+
+## Exercise #1: Add Team Members to _README.md_ File
+
+Add the GitHub usernames of your team members to the `README.md` file in your group repository, using the standard _git_ steps and GitHub Desktop. **One person at a time**, each group member should carry out the following four steps:
+
+  1. `fetch`/`pull` the most recent version of the remote repo onto your local computer
+  2. Edit `README.md` on your local computer to add your GitHub username
+  3. `commit` your edits to the local repo
+  4. `push` your edits to the remote repo
+  
+Each group member should have a chance to try out the steps. Coordinate the steps within your team so that you don't have a merge conflict. The final output in the _README.md_ file should look like this:
+
+```{txt}
+## Team Members
+- usernameA
+- usernameB
+- usernameC
+- usernameD
+```
+
+# Exercise #2: Becoming "Season"ed coders
+
+Now, let's take a break from GitHub to think about the coding concepts we reviewed today. 
+
+You're going to start thinking about a question that many researchers have tried to answer: How seasonal are injuries? (See https://pubmed.ncbi.nlm.nih.gov/34711114/, for example.) 
+
+Start off by using the `library` function to load the `bmi713neiss` package that you installed in the pre-class assignment. When you load this package, it automatically loads an object called `neiss_2013_2018`. Take a look at the first few rows of this object. The NEISS data already has a column with the month of the injury, but we want to know what season each injury happened in.
+
+```{r, eval=TRUE}
+# Add your code below
+
+```
+
+Our task is to use the month data to create a new vector that contains the season of each injury. For the purposes of this exercise, we'll say:
+
+  - Winter = months 1, 2, 3
+  - Spring = months 4, 5, 6
+  - Summer = months 7, 8, 9
+  - Fall = months 10, 11, 12
+  
+There are many ways that we can do this, and we want to find the best solution. To do this efficiently, split your group into two subgroups of 2-3 people each. Each subgroup should write a piece of code that takes the `neiss_2013_2018` data table as input and outputs a new vector that contains the season of each injury. However, make sure the solutions are **different**: each subgroup should use a different combination of control structures to accomplish the same goal. (Remember, you have a whole toolbox of control structures to choose from: `if`, `switch`, `for`, `while`, `ifelse`, `sapply`, `lapply`, `apply`).
+
+Hint: one subgroup should try using a function from the `apply` family...
+
+```{r, eval=TRUE}
+#Add your code below
+
+```
+
+Measure your subgroup's code's runtime by placing the command `ptm <- proc.time()` at the start of your code to start a stopwatch command & the command `proc.time() - ptm` at the end of your code to stop the clock.
+
+```{r, eval=TRUE}
+#Add your code below
+
+```
+
+## Discussion
+
+Each subgroup should share their code with the rest of the group: Which of your solutions was faster? What factors might influence your choice between these solutions? What other metrics might be useful to demonstrate that you made the right choice?
+
+```{txt}
+#Take notes on your discussion below
+
+```
+
+Prepare to share your findings with the class.
+
+## Bonus exercise: Resolving merge conflicts
+
+Let's see what happens if your group tries to write this code collaboratively. Warning: it might get messy! But Git will help us work through it.
+
+One representative from each subgroup should copy and paste their code and its runtime into the `season.R` file in the group assignment repo they cloned onto their local computer. Both subgroups' representatives should commit and push their changes to the remote repo. As we saw in class, whoever does this 2nd will encounter a merge conflict because their local and remote repos no longer match: resolve this conflict by fixing the code in `season.R` to have both functions and their runtimes, and pushing the fixed file back to the remote repository on GitHub. Make sure that everyone sees and understands how the merge conflict is resolved!
+
